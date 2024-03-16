@@ -1,10 +1,10 @@
 const asyncHandler = (asyncHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(asyncHandler(req, res, next)).catch((error) => next.error);
   };
 };
 
-export default asyncHandler;
+export  {asyncHandler};
 
 // const asynchandler = (fun) => async (req, res, next) => {
 //   try {
@@ -16,3 +16,9 @@ export default asyncHandler;
 //     });
 //   }
 // };
+
+
+
+
+
+//this is higher order function
